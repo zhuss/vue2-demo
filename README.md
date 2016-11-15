@@ -8,3 +8,5 @@
 # install dependencies
 npm install
 
+vue多页面配置
+
