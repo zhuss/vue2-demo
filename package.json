@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "vue2-demo",
+=======
+  "name": "vue-pages",
+>>>>>>> 931ac7c349ae2a57126b07f2ed9f8792518c663f
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "zhushunsheng <503305196@qq.com>",
