@@ -1,23 +1,43 @@
 <template>
   <div class="index">
-    <img src="../../assets/logo.png">
-    <hello></hello>
+    <!--top-->
+    <div class="layout-head">
+      <top></top>
+    </div>
+    <!--top-->
+
+    <!--content-->
+    <el-row>
+      <el-col :span="4">
+        <left></left>
+      </el-col>
+      <el-col :span="16">
+        <div>wqweqwe</div>
+      </el-col>
+    </el-row>
+    <!--content-->
   </div>
 </template>
 
 <script>
-import Hello from '../../components/Hello'
+require('../../assets/css/common.css')
+
+import Top from '../../components/Top'
+import Left from '../../components/Left'
+import Right from '../../components/Right'
 
 export default {
   name: 'index',
   components: {
-    Hello
-  }
+    Top,
+    Left,
+    Right
+  },
+
 }
 </script>
 
-<style>
+<style lang="less" scoped>
 .index {
-  
 }
 </style>
