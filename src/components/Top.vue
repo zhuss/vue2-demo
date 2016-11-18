@@ -1,12 +1,20 @@
 <template>
   <div class="layout">
-    <div class="header">
-      <span class="title">{{title}}</span>
-      <ul class="nav">
-        <li><a href="index.html">报表</a></li>
-        <li><a href="edit.html">编辑</a></li>
-      </ul>
-    </div>
+    <el-menu theme="dark" default-active="1" class="el-menu-demo" mode="horizontal">
+      <el-menu-item index="1">{{title}}</el-menu-item>
+      <el-submenu index="2">
+        <template slot="title">我的工作台</template>
+        <el-menu-item index="2-1">选项1</el-menu-item>
+        <el-menu-item index="2-2">选项2</el-menu-item>
+        <el-menu-item index="2-3">选项3</el-menu-item>
+      </el-submenu>
+      <el-menu-item index="3">订单管理</el-menu-item>
+
+      <el-submenu index="4" style="float: right;">
+        <template slot="title">{{name}}</template>
+        <el-menu-item index="2-1">登出</el-menu-item>
+      </el-submenu>
+    </el-menu>
   </div>
 </template>
 
@@ -15,7 +23,8 @@ export default {
   name: 'layout-top',
   data () {
     return {
-      title:"数据报表Admin"
+      title:"数据报表Admin",
+      name:"admin"
     }
   }
 }
@@ -23,30 +32,9 @@ export default {
 
 <style lang="less" scoped>
 .layout{
-  width: 100%;
-  height: 50px;
-  .header{
-    height: 50px;
-    background: #324057;
-    color: #FFF;
-    line-height: 50px;
-    padding: 0 20px;
-    display: flex;
-    .title{
-      color: #8492A6;
+    .el-menu-demo{
+      border-radius: 0;
+      padding-right: 20px;
     }
-    .nav{
-      flex:1;
-      padding-left: 50px;
-      li{
-        float: left;
-        a{
-          display: block;
-          padding: 0 20px;
-          font-size: 14px;
-        }
-      }
-    }
-  }
 }
 </style>

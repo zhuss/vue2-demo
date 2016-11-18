@@ -1,9 +1,7 @@
 <template>
   <div class="index">
     <!--top-->
-    <div class="layout-head">
-      <top></top>
-    </div>
+   <top></top>
     <!--top-->
 
     <!--content-->

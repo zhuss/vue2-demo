@@ -31,8 +31,6 @@ for (var pathname in pages) {
    build[pathname] = path.resolve(__dirname, '../dist/'+pathname+'.html')
 }
 
-console.log(build);
-
 module.exports = {
   build: build/*{
     env: require('./prod.env'),

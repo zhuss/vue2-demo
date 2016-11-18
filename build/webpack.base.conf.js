@@ -86,6 +86,5 @@ function getEntry(globPath) {
     pathname = basename.split("_")[0];
     entries[pathname] = entry;
   });
-  console.log(entries)
   return entries;
 }
