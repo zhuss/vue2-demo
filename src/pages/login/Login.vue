@@ -29,7 +29,13 @@ export default {
   },
   methods:{
   	submit(){
-  		this.$message('这是一条消息提示');
+  		if(this.userName&&this.password){
+  			localStorage.setItem("token","123123")
+  			location.assign("index.html")
+  		}else{
+  			this.$message('这是一条消息提示')
+  		}
+  		
   	}
   }
 }	

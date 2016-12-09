@@ -1,16 +1,9 @@
 <template>
   <div class="layout">
-    <el-menu theme="dark" default-active="1" class="el-menu-demo" mode="horizontal">
+    <el-menu theme="dark" default-active="1" class="el-menu-demo" @select="handleSelect" mode="horizontal">
       <el-menu-item index="1">{{title}}</el-menu-item>
-      <el-submenu index="2">
-        <template slot="title">我的工作台</template>
-        <el-menu-item index="2-1">选项1</el-menu-item>
-        <el-menu-item index="2-2">选项2</el-menu-item>
-        <el-menu-item index="2-3">选项3</el-menu-item>
-      </el-submenu>
-      <el-menu-item index="3">订单管理</el-menu-item>
 
-      <el-submenu index="4" style="float: right;">
+      <el-submenu index="2" style="float: right;">
         <template slot="title">{{name}}</template>
         <el-menu-item index="2-1">登出</el-menu-item>
       </el-submenu>
@@ -26,6 +19,19 @@ export default {
       title:"数据报表Admin",
       name:"admin"
     }
+  },
+  methods:{
+    handleSelect(key,keyPath){
+      if(key == "2-1"){
+        this.logout();
+      }
+    },
+    logout(){
+      console.log("debug")
+      localStorage.removeItem("token")
+      location.assign("login.html")
+    },
+
   }
 }
 </script>
