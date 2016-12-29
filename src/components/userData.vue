@@ -1,5 +1,22 @@
 <template>
 	<div class="user-data">
+		<div class="top-bar">
+			<div class="box">
+				<h3 class="title">下载总量</h3>
+				<p>1000000</p>
+			</div>
+
+			<div class="box">
+				<h3 class="title">注册总量</h3>
+				<p>1000000</p>
+			</div>
+
+			<div class="box">
+				<h3 class="title">平均日活</h3>
+				<p>1000000</p>
+			</div>
+
+		</div>
 		<div class="main" ref="main1"></div>
 		<div class="main" ref="main2"></div>
 		<div class="main" ref="main3"></div>
@@ -21,25 +38,38 @@ export default{
 
 		var self = this;
 		// 基于准备好的dom，初始化echarts实例
+
 		this.main1 = echarts.init(this.$refs.main1);
 		this.main2 = echarts.init(this.$refs.main2);
 		this.main3 = echarts.init(this.$refs.main3);
 
 
 		var option1 = {
+			color: ['#20A0FF'],
 			title: {
 		        text: 'Customized Pie',
 		        left: 'center',
 		        top: 20,
 		        textStyle: {
-		            color: '#ccc'
+		            color: '#324057'
 		        }
 		    },
 		    tooltip: {},
 		    xAxis: {
-		        data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+		        data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"],
+		        axisLine: {
+	                lineStyle: {
+	                    color: '#20A0FF'
+	                }
+	            }
 		    },
-		    yAxis: {},
+		    yAxis: {
+		    	axisLine: {
+	                lineStyle: {
+	                    color: '#20A0FF'
+	                }
+	            }
+		    },
 		    series: [{
 		        type: 'bar',
 		        data: [5, 20, 60, 10, 10, 20]
@@ -51,12 +81,13 @@ export default{
 
 
 		var option2 = {
+			color: ['#20A0FF'],
 			title: {
 		        text: 'Customized Pie',
 		        left: 'center',
 		        top: 20,
 		        textStyle: {
-		            color: '#ccc'
+		            color: '#324057'
 		        }
 		    },
 		    tooltip: {},
@@ -80,28 +111,30 @@ export default{
 		this.main2.setOption(option2);
 
 		var  option3 = {
+			    color: ['#20A0FF', '#1D8CE0', '#58B7FF'],
 				title: {
 			        text: 'Customized Pie',
 			        left: 'center',
 			        top: 20,
 			        textStyle: {
-			            color: '#ccc'
+			            color: '#324057'
 			        }
 			    },
 				tooltip: {
 					formatter:"{d}%"
 				},
-				/*legend: {
-			        data: ['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
-			    },*/
 			    series : [
 			        {
-			        	/*labelLine:{
-			        		normal:{
-			        			show:false
-			        		}
-			        	},*/
 			            type:'pie',
+			            /*label: {
+			                normal: {
+			                    show: false
+			                },
+			                emphasis: {
+			                    show: true
+			                }
+			            },*/
+			            radius: ['40%', '70%'],
 			            data:[
 			                {value:335, name:'直接访问'},
 			                {value:310, name:'邮件营销'},
@@ -125,12 +158,39 @@ export default{
 
 <style lang="less" scoped>
 .user-data{
+	.top-bar{
+		width: 100%;
+		overflow: hidden;
+		.box{
+			float: left;
+			background: #EFF2F7;
+			margin-right: 30px;
+			margin-bottom: 20px; 
+			padding:0 30px;
+			.title{
+				height: 40px;
+				line-height: 40px;
+				margin: 0;
+				padding: 0;
+				text-align: center;
+				color: #1F2D3D;
+			}
+			p{
+				height: 60px;
+				line-height: 60px;
+				font-size: 50px;
+				color: #20A0FF;
+				font-family: arial;
+			}
+		}
+	}
 	.main{
 		width: 400px;
 		height: 300px;
 		border: 1px solid #EEE;
 		float: left;
 		margin-right: 30px;
+		margin-bottom: 20px;
 	}
 }
 </style>
