@@ -11,7 +11,7 @@ Vue.use(VueResource)
 
 /* eslint-disable no-new */
 new Vue({
-  store:store,
+  store: store,
   el: '#app',
   components: { App }
 })
