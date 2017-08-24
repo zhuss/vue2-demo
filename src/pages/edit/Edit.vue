@@ -13,12 +13,9 @@
         <span>sql语句</span>
         <el-input type="textarea" placeholder="请输入内容" ></el-input>
       </div>
-      
-      
     </el-card>
-
+	</div>
 </template>
-Edit
 <script>
 require('../../assets/css/common.css')
 
